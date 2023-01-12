@@ -1,0 +1,14 @@
+.div_block {
+display: flex;
+flex-direction: column;
+}
+
+.input {
+height: 50px;
+border: 7px solid rgb(78, 18, 61);
+}
+
+.label {
+font-size: 30px;
+color: black;
+}

@@ -1,0 +1,28 @@
+.elements {
+display: flex;
+margin: 0 auto;
+padding: 20px;
+border-radius: 10px;
+border: 7px solid rgb(54, 4, 45);
+margin-top: 50px;
+}
+.item {
+display: flex;
+align-items: center;
+height: 60px;
+border-radius: 10px;
+border: 7px solid rgb(58, 8, 59);
+width: 100%;
+}
+
+.name {
+color: rgb(70, 13, 56);
+font-size: 30px;
+font-weight: 700;
+}
+
+.year {
+color: red;
+font-size: 20px;
+font-weight: 700;
+}

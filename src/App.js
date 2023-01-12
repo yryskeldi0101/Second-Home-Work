@@ -1,23 +1,45 @@
-import logo from './logo.svg';
-import './App.css';
+import { useState } from "react";
+import "./App.css";
+import ExpenseForm from "./components/expenseform/ExpenseForm";
+import Expenses from "./components/expenses/Expenses";
 
 function App() {
+  const [users, setUsers] = useState([
+    {
+      id: 1,
+      name: "Yryskeldi",
+      year: 20,
+    },
+    {
+      id: 2,
+      name: "Akbar",
+      year: 30,
+    },
+    {
+      id: 3 ,
+      name: "Kurmanjan",
+      year: 70,
+    },
+    {
+      id: 4,
+      name: "Nurbolot",
+      year: 90 ,
+    },
+  ]);
+  const addNewExpenseHandler = (data) => {
+    const upDatedUsers = [...users];
+    upDatedUsers.push(data);
+    setUsers(upDatedUsers);
+  };
+users.sort((a, b) => {
+  return b.year - a.year
+})
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="apps">
+      <div className="items">
+        <ExpenseForm onNewExpenseAdd={addNewExpenseHandler}/>
+        <Expenses expenses={users} />
+      </div>
     </div>
   );
 }
